@@ -150,12 +150,44 @@
 })();
 
 /* =========================================================
-   6. TECH STACK spotlight (edit this list!)
+   6. TECH STACK: one flat grid of tall cards (edit the list below!)
+      Format: ["Name", "devicon-folder/devicon-file" or null, invertOnDark?, "small line under the name"]
+      Add as many as you like, the grid adjusts itself.
    ========================================================= */
 (function(){
-  const list=['HTML','CSS','JavaScript','React','Node.js','Express','MongoDB','Python','C++','Java','Git','GitHub','Tailwind','WebSockets','Postman','VS Code'];
-  const g=document.getElementById('techGrid');
-  g.innerHTML=list.map(t=>`<div>${t}</div>`).join('');
+  const base = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
+  const stack = [
+    ["HTML",       "html5/html5-original",               false, "Structure"],
+    ["CSS",        "css3/css3-original",                 false, "Styling"],
+    ["JavaScript", "javascript/javascript-original",     false, "Language of the web"],
+    ["React",      "react/react-original",               false, "UI library"],
+    ["Tailwind",   "tailwindcss/tailwindcss-original",   false, "Utility-first CSS"],
+    ["Node.js",    "nodejs/nodejs-original",             false, "JS runtime"],
+    ["Express",    "express/express-original",           true,  "Backend framework"],
+    ["MongoDB",    "mongodb/mongodb-original",           false, "Database"],
+    ["WebSockets", null,                                 false, "Real-time apps"],
+    ["Python",     "python/python-original",             false, "Scripting"],
+    ["C++",        "cplusplus/cplusplus-original",       false, "Fast & low-level"],
+    ["Java",       "java/java-original",                 false, "Object-oriented"],
+    ["Git",        "git/git-original",                   false, "Version control"],
+    ["GitHub",     "github/github-original",             true,  "Code hosting"],
+    ["Postman",    "postman/postman-original",           false, "API testing"],
+    ["VS Code",    "vscode/vscode-original",             false, "Code editor"]
+  ];
+
+  const mount = document.getElementById('techGroups');
+  if (!mount) return;
+
+  mount.innerHTML = stack.map(([name, icon, inv, note]) => `
+    <div class="tech-card">
+      <div class="tech-icon">
+        ${icon
+          ? `<img src="${base}/${icon}.svg" alt="" class="${inv ? 'invert' : ''}">`
+          : `<span>⚡</span>`}
+      </div>
+      <h3>${name}</h3>
+      <p>${note}</p>
+    </div>`).join('');
 })();
 
 /* =========================================================

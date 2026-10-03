@@ -214,11 +214,20 @@ section{position:relative;padding:7rem clamp(1.2rem,6vw,6rem)}
   .tl article:nth-of-type(odd)::after,.tl article:nth-of-type(even)::after{left:1px;right:auto;top:1.5rem}
 }
 
-/* ===== TECH ===== */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1rem}
-.grid div{position:relative;padding:1.6rem 1rem;text-align:center;border:1px solid rgba(255,255,255,.12);border-radius:14px;font-weight:600;transition:transform .2s,opacity .2s,color .2s,border-color .2s,background .2s}
-.grid:hover div{opacity:.4}
-.grid div:hover{opacity:1;transform:scale(1.12);z-index:1;color:var(--accent);border-color:var(--accent);background:rgba(139,92,246,.1)}
+/* ===== TECH (flat grid of tall cards) ===== */
+#techGroups{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1.2rem}
+.tech-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;aspect-ratio:3/4;padding:1.5rem 1rem;text-align:center;border:1px solid rgba(255,255,255,.12);border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.015));transition:transform .25s,opacity .25s,border-color .25s,background .25s,box-shadow .25s}
+.tech-icon{display:grid;place-items:center;width:84px;height:84px;margin-bottom:.8rem;border-radius:22px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-size:2.2rem;transition:transform .25s,border-color .25s}
+.tech-icon img{width:48px;height:48px;display:block}
+.tech-icon img.invert{filter:invert(1)}
+.tech-card h3{font-size:1.15rem;font-weight:700;letter-spacing:-.01em}
+.tech-card p{font-size:.85rem;color:var(--muted);line-height:1.4}
+/* spotlight: hovering the stack dims everything except the card you point at */
+#techGroups:hover .tech-card{opacity:.4}
+#techGroups .tech-card:hover{opacity:1;transform:translateY(-8px);border-color:var(--accent);background:rgba(139,92,246,.1);box-shadow:0 20px 40px -18px var(--accent-soft)}
+#techGroups .tech-card:hover .tech-icon{transform:scale(1.08);border-color:var(--accent)}
+#techGroups .tech-card:hover h3{color:var(--accent)}
+@media(max-width:800px){#techGroups{grid-template-columns:repeat(2,1fr);gap:.9rem}.tech-icon{width:68px;height:68px}.tech-icon img{width:38px;height:38px}}
 
 /* ===== NUMBERS ===== */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
@@ -266,3 +275,29 @@ section{position:relative;padding:7rem clamp(1.2rem,6vw,6rem)}
 @media(max-width:700px){#aboutName span{display:block}}
 
 #bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.7}
+
+
+.stat{
+  position:relative;padding:28px 24px;border-radius:20px;overflow:hidden;
+  background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.015));
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+  transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;
+}
+.stat:hover{
+  border-color:rgba(168,85,247,.5);
+  box-shadow:0 20px 50px -20px rgba(168,85,247,.55);
+}
+.stat .ico{
+  display:grid;place-items:center;width:46px;height:46px;margin-bottom:18px;
+  border-radius:14px;font-style:normal;color:#c4a1ff;
+  background:rgba(168,85,247,.12);border:1px solid rgba(168,85,247,.25);
+}
+.stat .ico svg{width:22px;height:22px}
+.stat strong{display:block;font-size:2.6rem;font-weight:600;letter-spacing:-.02em;line-height:1}
+.stat span{
+  display:block;margin-top:10px;font-size:.78rem;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(255,255,255,.55);
+}
+.stat .bar{height:3px;margin-top:20px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden}
+.stat .bar b{background:linear-gradient(90deg,#7c3aed,#c4a1ff)}
