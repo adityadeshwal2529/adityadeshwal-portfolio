@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aditya Deshwal</title>
+  <meta name="description" content="Portfolio of Aditya Deshwal" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap" rel="stylesheet" />
+
+  <!-- Runs before first paint: if the visitor already saw the preloader, hide it instantly (no flash) -->
+  <script>
+    try {
+      if (localStorage.getItem('ad_seen') && !location.search.includes('preloader')) {
+        document.documentElement.classList.add('seen');
+      }
+    } catch (e) {}
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="locked">
+<canvas id="bg"></canvas>
+  <!-- ===== PRELOADER ===== -->
+  <div id="preloader" aria-label="Welcome">
+    <p id="greeting" aria-live="polite">Hello</p>
+    <button id="skip" type="button">Skip</button>
+  </div>
+
+  <div class="glow"></div><div class="dot"></div>
+
+  <nav id="nav">
+    <a href="#hero" class="logo">AD</a>
+    <button id="menuBtn" type="button">Menu</button>
+    <div class="menu">
+      <a href="#about">About Me</a><a href="#timeline">Timeline</a><a href="#tech">Technologies</a>
+      <a href="#projects">Projects</a><a href="#connect">Let's Connect</a><a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO (placeholder for now, replaced in step 3) ===== -->
+  <main>
+    <section id="hero">
+      <h1 id="hero-name" aria-label="Aditya Deshwal">
+        <span>ADITYA</span> <span>DESHWAL</span>
+      </h1>
+      <a class="scroll-hint" href="#about" aria-label="Scroll down">
+        <span>Scroll</span>
+        <i></i>
+      </a>
+    </section>
+
+    <section id="about">
+      <div class="about-text">
+        <h2 id="aboutName" aria-hidden="true"><span>ADITYA</span> <span>DESHWAL</span></h2>
+        <p>Engineering student at DCRUST, building full-stack web apps with the MERN stack and practising DSA every day.</p>
+      </div>
+      <div class="photo"><img src="photo.jpeg" alt="Aditya Deshwal" /></div>
+    </section>
+
+    <section id="timeline">
+      <h2 class="title">Timeline</h2>
+      <div class="tl">
+        <div class="tl-line"><b></b></div>
+        <article><h3>College admission</h3><em>Aug 2025</em><p>A new journey starts.</p></article>
+        <article><h3>SIH participation</h3><em>Sep 2025</em><p>Smart India Hackathon, my first big team build.</p></article>
+        <article><h3>Hackrust 1.0</h3><em>Apr 2026</em><p>Took part in the college hackathon.</p></article>
+        <article><h3>Community internship</h3><em>Jul 2026</em><p>80 hours teaching and mentoring at a government school.</p></article>
+        <article><h3>E-Cell DCRUSTM</h3><em>Aug 2026</em><p>Became a member of the Entrepreneurship Cell.</p></article>
+      </div>
+    </section>
+
+    <section id="tech">
+      <h2 class="title">What I use</h2>
+      <div class="grid" id="techGrid"></div>
+    </section>
+
+    <section id="numbers">
+  <h2 class="title">By the numbers</h2>
+  <div class="stats">
+    <div class="stat" data-val="8.5" data-max="10" data-dec="1"><i>🎓</i><strong>0</strong><span>Last semester SGPA</span><div class="bar"><b></b></div></div>
+    <div class="stat" data-val="8.2" data-max="10" data-dec="1"><i>📈</i><strong>0</strong><span>Overall CGPA</span><div class="bar"><b></b></div></div>
+    <div class="stat" data-val="150" data-max="300" data-suffix="+"><i>💻</i><strong>0</strong><span>LeetCode solved</span><div class="bar"><b></b></div></div>
+    <div class="stat" data-val="30" data-max="100"><i>🔥</i><strong>0</strong><span>LeetCode day streak</span><div class="bar"><b></b></div></div>
+  </div>
+
+</section>
+    <section id="projects">
+      <div class="sticky">
+        <h2 class="title">Projects</h2>
+        <div class="track" id="track"></div>
+      </div>
+    </section>
+
+    <section id="connect">
+  <h2 class="big">Let's work<br>together</h2>
+  <p>Open to internships and collaborations. Say hi!</p>
+  <button class="mail" id="mailBtn" type="button" data-email="you@example.com">
+    <span>adityadeshwal2529@gmail.com</span><small>Click to copy</small>
+  </button>
+  <div class="links">
+  <a href="https://github.com/adityadeshwal2529" target="_blank" rel="noopener" aria-label="GitHub">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    <span>@adityadeshwal2529</span><em>↗</em>
+  </a>
+  <a href="https://linkedin.com/in/adityadeshwal/" target="_blank" rel="noopener" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    <span>@adityadeshwal</span><em>↗</em>
+  </a>
+  <a href="https://leetcode.com/u/Aditya_Deshwal04/" target="_blank" rel="noopener" aria-label="LeetCode">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 3.5 5.8 13.2a2.4 2.4 0 0 0 0 3.4l3.4 3.4a2.4 2.4 0 0 0 3.4 0l2.9-2.9"/><path d="M9.5 12h11"/></svg>
+    <span>Aditya_Deshwal04</span><em>↗</em>
+  </a>
+  <a href="resume.pdf" target="_blank" rel="noopener" aria-label="Resume">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6z"/><path d="M14 2v5h5M9 13h7M9 17h7"/></svg>
+    <span>Resume</span><em>↗</em>
+  </a>
+</div>
+  <footer class="foot">© 2026 Aditya Deshwal</footer>
+</section>
+
+    <!-- NEXT SECTIONS GO BELOW THIS LINE -->
+  </main>
+<script src="bg.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
