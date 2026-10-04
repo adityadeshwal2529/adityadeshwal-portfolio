@@ -2,7 +2,7 @@
 
 A dark-themed personal portfolio built with plain HTML, CSS and JavaScript.
 
-🔗 **Live:** [adityadeshwal2529.github.io/YOUR-REPO-NAME](https://adityadeshwal2529.github.io/YOUR-REPO-NAME/)
+🔗 **Live:** [adityadeshwal2529.github.io/YOUR-REPO-NAME](https://adityadeshwal2529.github.io/adityadeshwal-portfolio/)
 
 ## Features
 
