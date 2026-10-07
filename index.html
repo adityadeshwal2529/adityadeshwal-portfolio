@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="locked">
-<canvas id="bg"></canvas>
+
   <!-- ===== PRELOADER ===== -->
   <div id="preloader" aria-label="Welcome">
     <p id="greeting" aria-live="polite">Hello</p>
@@ -53,12 +53,16 @@
     </section>
 
     <section id="about">
-      <div class="about-text">
-        <h2 id="aboutName" aria-hidden="true"><span>ADITYA</span> <span>DESHWAL</span></h2>
-        <p>Engineering student at DCRUST, building full-stack web apps with the MERN stack and practising DSA every day.</p>
-      </div>
-      <div class="photo"><img src="photo.jpeg" alt="Aditya Deshwal" /></div>
-    </section>
+  <div class="about-text">
+    <p class="hi">Hi, I'm</p>
+    <h2 id="aboutName" aria-hidden="true"><span>ADITYA</span> <span>DESHWAL</span></h2>
+    <div class="roles"><span id="typed"></span><span class="caret"></span></div>
+    <p class="about-bio">Building fast, clean websites and full-stack apps with the MERN stack, and practising DSA every day.</p>
+    
+   
+  </div>
+  <div class="globe-wrap"><canvas id="globe" role="img" aria-label="Rotating globe"></canvas></div>
+</section>
 
     <section id="timeline">
       <h2 class="title">Timeline</h2>
@@ -132,10 +136,9 @@
 </div>
   <footer class="foot">© 2026 Aditya Deshwal</footer>
 </section>
-
+<script src="script.js"></script>
     <!-- NEXT SECTIONS GO BELOW THIS LINE -->
   </main>
-<script src="bg.js"></script>
-  <script src="script.js"></script>
+
 </body>
 </html>
