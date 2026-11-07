@@ -1,8 +1,8 @@
 # Aditya Deshwal — Portfolio
 
-A dark-themed personal portfolio built with plain HTML, CSS and JavaScript.
+A light-themed personal portfolio built with plain HTML, CSS and JavaScript.
 
-🔗 **Live:** [adityadeshwal2529.github.io/YOUR-REPO-NAME](https://adityadeshwal2529.github.io/adityadeshwal-portfolio/)
+🔗 **Live:** [adityadeshwal2529.github.io/adityadeshwal-portfolio](https://adityadeshwal2529.github.io/adityadeshwal-portfolio/)
 
 ## Features
 
@@ -19,8 +19,8 @@ HTML5 · CSS3 · Vanilla JavaScript · WebGL
 ## Run Locally
 
 ```bash
-git clone https://github.com/adityadeshwal2529/YOUR-REPO-NAME.git
-cd YOUR-REPO-NAME
+git clone https://github.com/adityadeshwal2529/adityadeshwal-portfolio.git
+cd adityadeshwal-portfolio
 ```
 
 Then open `index.html` in your browser (or use Live Server in VS Code).
